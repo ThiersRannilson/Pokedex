@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex FireRed - Kanto</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .font-pixel { font-family: 'Press+Start+2P', monospace; }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col items-center">
+
+    <!-- Cabeçalho Responsivo -->
+    <header class="w-full bg-red-600 border-b-4 border-red-800 py-6 px-4 shadow-xl text-center">
+        <h1 class="font-pixel text-sm sm:text-lg md:text-2xl text-yellow-300 drop-shadow-[0_3px_3px_rgba(0,0,0,0.9)] leading-relaxed">
+            Pokédex - Kanto (FireRed)
+        </h1>
+        <p class="text-xs sm:text-sm text-red-100 mt-2 font-medium">Explore, filtre e analise os Pokémon clássicos da primeira geração!</p>
+    </header>
+
+    <!-- Barra de Pesquisa Responsiva -->
+    <div class="w-full max-w-4xl px-4 mt-6 flex justify-center">
+        <input id="searchInput" type="text" placeholder="Pesquisar Pokémon por nome..." 
+            class="w-full max-w-md px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-400 focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/30 shadow-lg transition-all text-sm sm:text-base">
+    </div>
+
+    <!-- Filtros por Tipo com Scroll Horizontal Responsivo -->
+    <div class="w-full max-w-5xl px-4 mt-6">
+        <div id="typeFilters" class="flex sm:flex-wrap overflow-x-auto sm:justify-center gap-2 pb-2 scrollbar-none">
+            <button data-type="all" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold uppercase bg-yellow-400 text-slate-950 shadow-md transition-all hover:scale-105 ring-4 ring-white shrink-0">
+                Todos
+            </button>
+            <button data-type="fire" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold uppercase bg-orange-600 text-white shadow-md transition-all hover:scale-105 shrink-0">
+                Fogo
+            </button>
+            <button data-type="water" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold uppercase bg-blue-600 text-white shadow-md transition-all hover:scale-105 shrink-0">
+                Água
+            </button>
+            <button data-type="grass" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold uppercase bg-green-600 text-white shadow-md transition-all hover:scale-105 shrink-0">
+                Planta
+            </button>
+            <button data-type="electric" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold uppercase bg-yellow-500 text-slate-950 shadow-md transition-all hover:scale-105 shrink-0">
+                Elétrico
+            </button>
+            <button data-type="poison" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold uppercase bg-purple-600 text-white shadow-md transition-all hover:scale-105 shrink-0">
+                Veneno
+            </button>
+            <button data-type="psychic" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold uppercase bg-pink-600 text-white shadow-md transition-all hover:scale-105 shrink-0">
+                Psíquico
+            </button>
+            <button data-type="bug" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold uppercase bg-lime-600 text-white shadow-md transition-all hover:scale-105 shrink-0">
+                Inseto
+            </button>
+            <button data-type="normal" class="filter-btn px-4 py-2 rounded-lg text-xs font-bold uppercase bg-zinc-600 text-white shadow-md transition-all hover:scale-105 shrink-0">
+                Normal
+            </button>
+        </div>
+    </div>
+
+    <!-- Container dos Cards dos Pokémon -->
+    <main class="w-full max-w-6xl p-4 sm:p-6">
+        <div id="pokemonGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+            <!-- Os cards serão injetados aqui via JavaScript -->
+        </div>
+    </main>
+
+    <!-- Modal de Detalhes Responsivo -->
+    <div id="pokeModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div id="modalContent" class="bg-slate-800 border border-slate-700 w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-2xl p-6 relative shadow-2xl transform transition-all scale-95 opacity-0">
+            <!-- Botão Fechar -->
+            <button id="closeModal" class="absolute top-4 right-4 text-slate-400 hover:text-white bg-slate-900/50 w-8 h-8 rounded-full flex items-center justify-center transition-colors z-10">
+                ✕
+            </button>
+            <div id="modalBody">
+                <!-- Conteúdo detalhado injetado dinamicamente via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Script JavaScript Externo -->
+    <script src="script.js"></script>
+</body>
+</html>
