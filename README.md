@@ -1,5 +1,7 @@
 Desenvolvi uma Pokédex completa da 1ª Geração do zero até ao deploy em produção.
 
+Acesse: https://pokedex-firered-kanto.web.app/
+
 🚀 Tecnologias Utilizadas
 HTML5 para a estrutura semântica.
 
